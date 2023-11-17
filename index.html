@@ -8,37 +8,72 @@
         body {
   font-family: 'Arial', sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
-  background-color: #cbdf90;
+  /* background-color: #294D61; */
+  background: #2980b9 url('https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0;
+	-webkit-animation: 10s linear 0s normal none infinite animate;
+	-moz-animation: 10s linear 0s normal none infinite animate;
+	-ms-animation: 10s linear 0s normal none infinite animate;
+	-o-animation: 10s linear 0s normal none infinite animate;
+	animation: 10s linear 0s normal none infinite animate;
+        }
+@-webkit-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@-moz-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@-ms-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@-o-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
 }
 
 body.light-mode {
   background-color: skyblue;
-  color: black; /* Set the text color for light mode */
+  color: black; 
+
 }
 
 body.dark-mode {
-  background-color: #333;
-  color: #fff;
+  background: #01070b ;
+  color: black;
 }
 
 .container {
   max-width: 400px;
   margin: 3em auto;
   padding: 20px;
-  background-color:#ede04b;
+  background-color:#6DA5C0;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .container.dark-mode {
-  background-color: #2c3e50;
+  background-color: #17030f;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 h1 {
   text-align: center;
-  color: #3498db;
+  color: #072E33;
+}
+
+h1.dark-mode{
+color:aliceblue;
 }
 
 
@@ -55,19 +90,28 @@ input[type="text"] {
   color: #3498db;
 }
 
+
 button {
   padding: 8px 12px;
-  background-color: #3498db;
+  background-color: #0F989C;
   color: white;
   border: none;
   border-radius: 3px;
   cursor: pointer;
 }
 
+
+button:hover{
+  background-color: #c0392b;
+}
+
+button.dark-mode{
+  background-color: #05161A;
+}
 button.toggle-dark-mode {
   margin-top: 10px;
   padding: 8px 12px;
-  background-color: #34495e;
+  background-color: #0F989C;
   color: white;
   border: none;
   border-radius: 3px;
@@ -94,13 +138,13 @@ li {
 }
 
 li.dark-mode {
-  background-color: #34495e;
-  border-color: #2c3e50;
+  background-color: #0F989C;
+  border-color: #0F989C;
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
 li:hover {
-  background-color: #f9f9f9;
+  background-color: rgb(117, 162, 205);
 }
 
 li.dark-mode:hover {
@@ -119,11 +163,16 @@ li span {
 
 li button {
   margin-left: 10px;
-  background-color: #e74c3c;
+  background-color: #0F989C;
   color: white;
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+li button:hover {
+  background-color: #c0392b;
 }
 
 .strikethrough {
@@ -133,7 +182,7 @@ li button {
 button#delete-all {
   margin-top: 10px;
   padding: 8px 12px;
-  background-color: #e74c3c;
+  background-color: #0F989C;
   color: white;
   border: none;
   border-radius: 3px;
@@ -147,50 +196,20 @@ button#delete-all:hover {
   background-color: #c0392b;
 }
 
-.priority-high {
-  background-color: #e74c3c;
+label.dark-mode{
   color: white;
-}
-
-.priority-medium {
-  background-color: #f39c12;
-  color: white;
-}
-
-.priority-low {
-  background-color: #2ecc71;
-  color: white;
-}
-
-.edit-mode input[type="text"] {
-  border: 1px solid #3498db;
-}
-
-.edit-mode button.edit {
-  background-color: #3498db;
-}
-
-.edit-mode button.edit:hover {
-  background-color: #2980b9;
 }
 
 
 #task-stats {
-  margin-top: 10px;
+  padding-top: 2em;
   font-size: 14px;
-  color: #555;
-  margin-left:0;
+  color: white;
+  
 }
 
-li.dark-mode {
-  background-color: #34495e;
-  border-color: #2c3e50;
-  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-}
 
-li.dark-mode span {
-  color: #fff; /* Set the text color for dark mode */
-}
+
   </style>
 </head>
 <body>
@@ -218,8 +237,6 @@ li.dark-mode span {
     <button id="delete-all">Delete Completed tasks</button>
   </div>
   
-  
-
   <script src="todo_list.js"></script>
 </body>
 </html>
